@@ -1,12 +1,13 @@
 export const SITUATION_TYPES = [
   "Taklinger",
-  "DOGSO/SPA",
   "Straffespark",
+  "DOGSO/SPA",
   "Hands",
+  "Holding",
   "Offside",
   "Management",
   "Samarbeid",
-  "Laws of the game",
+  "Laws of the Game",
 ] as const;
 
 export const LEAGUES = [

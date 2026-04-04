@@ -24,22 +24,16 @@ export default async function ClipDetailPage({ params }: Props) {
 
   return (
     <main className="appShell">
-      <section className="panel toolbar">
-        <div>
-          <p className="eyebrow">{clip.league}</p>
-          <h1>{clip.title}</h1>
-        </div>
-        <div className="buttonRow">
-          <Link href={`/${secretSlug}`}>Tilbake til oversikt</Link>
-        </div>
-      </section>
+      <Link href={`/${secretSlug}/clip`} className="backBtn">
+        ← Tilbake til klipp
+      </Link>
 
-      {error ? <section className="panel"><p className="formMessage error">{error}</p></section> : null}
+      {error ? <p className="formMessage error">{error}</p> : null}
 
       {videoUrl ? (
         <ClipPlayer title={clip.title} videoUrl={videoUrl} conclusionText={clip.conclusion_text} />
       ) : (
-        <section className="panel"><p className="formMessage error">Fant ikke videofil for klippet.</p></section>
+        <p className="formMessage error">Fant ikke videofil for klippet.</p>
       )}
     </main>
   );
